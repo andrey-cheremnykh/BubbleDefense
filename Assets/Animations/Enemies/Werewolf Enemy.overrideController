@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Werewolf Enemy
+  m_Controller: {fileID: 9100000, guid: 278449ddd4ccd604d8c085be6f68e11e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d78dc31e82ecbaa4aadd1841d5fb4f95, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 125361c949e29614a83fba320d676ebf, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 14b46c82e96dea840a7ed9b8cc4a78d0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 28b030dcd3fb414409a1a878ad67d3f1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d071334d0ca00c747b0f57d8e6c23b00, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 24fdd6c838d4c984d98243cce04f763e, type: 2}

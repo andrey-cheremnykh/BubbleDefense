@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Squid Enemy
+  m_Controller: {fileID: 9100000, guid: 278449ddd4ccd604d8c085be6f68e11e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d78dc31e82ecbaa4aadd1841d5fb4f95, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f4b03c02d51e45f4caf0a6be4a9fa749, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 14b46c82e96dea840a7ed9b8cc4a78d0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8a72a35b0eb2318499b1ce23b7c1ea28, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d071334d0ca00c747b0f57d8e6c23b00, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7b72fc12b3071d9419d70c6f3ea58d5f, type: 2}
