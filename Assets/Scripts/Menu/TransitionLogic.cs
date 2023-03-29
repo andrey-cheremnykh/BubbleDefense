@@ -60,15 +60,4 @@ public class TransitionLogic : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 
-    public void ChangeMusicState()
-    {
-        
-    }
-
-    public void ChangeSoundState()
-    {
-
-    }
-
-
 }

@@ -43,6 +43,36 @@ public class GlobalAudioManager : MonoBehaviour
         }
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 0)
+        {
+            StartCoroutine(ChangeMusicCorout(menuMusic));
+        }
+        else
+        {
+            StartCoroutine(ChangeMusicCorout(gameMusic));
+        }
+    }
+    IEnumerator ChangeMusicCorout(AudioClip clip)
+    {
+        float volume = 1;
+        while(volume > 0)
+        {
+            volume -= Time.deltaTime * 2;
+            audio.volume = volume; 
+            yield return null;
+        }
+        audio.clip = clip;
+        audio.Play();
+        while (volume < 1)
+        {
+            volume += Time.deltaTime * 2;
+            audio.volume = volume;
+            yield return null;
+        }
+        audio.volume = 1;
 
-    
+    }
+
 }

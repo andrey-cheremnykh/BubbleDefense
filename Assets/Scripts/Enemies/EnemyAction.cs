@@ -81,6 +81,7 @@ public class EnemyAction : MonoBehaviour
 
     void RotateProperly(Vector3 start, Vector3 end)
     {
+        if (isMoving == false) return;
         Vector3 dir = end - start;
         Vector3 lookPoint = transform.position + dir;
         transform.LookAt(lookPoint);

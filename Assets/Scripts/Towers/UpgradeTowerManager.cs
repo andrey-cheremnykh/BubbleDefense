@@ -97,6 +97,7 @@ public class UpgradeTowerManager : MonoBehaviour
         if (isInTransition) return;
         if (selectedTower == null) return;
         buildTowerManager.DecreaseTowerAmount();
+        attackRadiusDisplay.DisableRadius();
         audio.Play();
         StartCoroutine(selectedTower.DestroyTower());
         StartCoroutine(towerButtons.DisableUpgradeButtons());

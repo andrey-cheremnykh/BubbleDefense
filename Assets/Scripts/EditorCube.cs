@@ -24,7 +24,7 @@ public class EditorCube : MonoBehaviour
     }
 
     void LabelCube()
-    {
+     {
         int x = Mathf.RoundToInt(transform.position.x / gridscale);
         int y = Mathf.RoundToInt(transform.position.z / gridscale);
         gameObject.name = $"Tile ({x}, {y})";
