@@ -16,4 +16,4 @@ MonoBehaviour:
   - {fileID: 2904355646978994162, guid: 3a98634f8fb41af46bcbd0fadeab2fe4, type: 3}
   durationBetween: 3
   enemyCount: 14
-  healthMult: 1
+  healthMult: 1.5

@@ -24,16 +24,15 @@ public class ExtraWindowsLogic : MonoBehaviour
 
     float adsMult = 2;
     bool isAdLoaded = false;
-    RewardedAd rewardedAd;
 
     // Start is called before the first frame update
     void Start()
     {
-        rewardedAd = FindObjectOfType<RewardedAd>();
         gameOverWindow.SetActive(false);
         FindObjectOfType<CastleHealth>().onDestroy += GameOver;
         FindObjectOfType<EnemySpawner>().onWin += WinLevel;
         StartCoroutine(HideFadePanel());
+        YandexSDK.instance.ShowInterstitial();
     }
 
     // calls at beggining of the level for smooth tranition between scenes
@@ -61,7 +60,6 @@ public class ExtraWindowsLogic : MonoBehaviour
     {
         if (state != GameStates.NORMAL) return;
 
-        rewardedAd.LoadAd();
         state = GameStates.GAMEOVER;
         
         gameOverWindow.SetActive(true);
@@ -71,11 +69,14 @@ public class ExtraWindowsLogic : MonoBehaviour
     {
         if (state != GameStates.NORMAL) return;
 
-        rewardedAd.LoadAd();
         state = GameStates.WIN;
         winWindow.SetActive(true);
     }
 
+    private void OnEnable()
+    {
+        YandexSDK.instance.onRewardedAdReward += RewardForAd; 
+    }
     private void OnDisable()
     {
         Time.timeScale = 1;
@@ -147,19 +148,14 @@ public class ExtraWindowsLogic : MonoBehaviour
 
     public void PlayAds(int mult)
     {
-        if (!isAdLoaded) return;
         adsMult = mult;
-        FindObjectOfType<RewardedAd>().ShowAd();
+        YandexSDK.instance.ShowRewarded("endround");
     }
 
-    public void AdsLoaded()
+    
+    public void RewardForAd(string id)
     {
-        isAdLoaded = true;
-        // activate buttons (probably)
-    }
-
-    public void RewardForAd()
-    {
+        if (id != "endround") return;
         if (state == GameStates.WIN)
            StartCoroutine(  winWindow.GetComponent<WinLevelWindow>().TripleCrystals() );
         else if (state == GameStates.GAMEOVER)

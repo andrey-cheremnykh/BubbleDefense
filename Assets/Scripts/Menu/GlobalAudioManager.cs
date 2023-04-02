@@ -74,5 +74,5 @@ public class GlobalAudioManager : MonoBehaviour
         audio.volume = 1;
 
     }
-
+    
 }
